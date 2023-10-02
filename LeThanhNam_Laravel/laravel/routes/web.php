@@ -28,13 +28,13 @@ Route::prefix('project')->name('project.')->group(function () {
         Route::get('index', [ProjectController::class, 'index'])->name('index');
 
         //Get product theo page
-        Route::get('index/page/{page}', [ProjectController::class, 'getProductByPage'])->name('getProductByPage');
+        //Route::get('index/', [ProjectController::class, 'getProductByPage'])->name('getProductByPage');
 
         //Get product theo idType
         Route::get('index/{idTypeProduct}', [ProjectController::class, 'getProductByIdTypeProduct'])->name('getProductByIdTypeProduct');
 
         //Get product theo idType
-        Route::get('index/{idTypeProduct}/page/{page}', [ProjectController::class, 'getProductByPageByIdTypeProduct'])->name('getProductByPageByIdTypeProduct');
+        //Route::get('index/{idTypeProduct}/page/', [ProjectController::class, 'getProductByPageByIdTypeProduct'])->name('getProductByPageByIdTypeProduct');
 
         //Trang chi tiết
         Route::get('product/{idProduct}', [ProjectController::class, 'productDetail'])->name('productDetail');

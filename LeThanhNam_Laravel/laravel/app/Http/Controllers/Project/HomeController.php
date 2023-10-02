@@ -28,12 +28,20 @@ class HomeController extends Controller
 
     public function index()
     {
-        $page = 1;
-        return redirect()->route('project.getProductByPage', ['page' => $page]);
+        $products = $this->productClass->getAllProductByPage(Product::$limit);
+        $typeProducts = $this->typeProductClass->getAllTypeProduct();
+        return view('project.index', compact('products', 'typeProducts'));
     }
 
-    public function getProductByPage($page)
+    public function getProductByPage()
     {
+        // //Nhận offset
+        // $offset = Product::getOffset($page);
+        // //Nhận count tất cả sản phẩm
+        // $count = $this->productClass->getCountAllProduct();
+        // //Nhận số trang tối đa
+        // $maxPage = Product::getMaxPage($count);
+
         // //Nhận toàn bộ sản phẩm theo page
         $products = $this->productClass->getAllProductByPage(Product::$limit);
         $typeProducts = $this->typeProductClass->getAllTypeProduct();
@@ -42,11 +50,12 @@ class HomeController extends Controller
 
     public function getProductByIdTypeProduct($idTypeProduct = 0)
     {
-        $page = 1;
-        return redirect(route('project.getProductByPageByIdTypeProduct', ['idTypeProduct' => $idTypeProduct, 'page' => $page]));
-    }
+        $products = $this->productClass->getAllProductByPageByIdTypeProduct(Product::$limit, $idTypeProduct);
 
-    public function getProductByPageByIdTypeProduct($idTypeProduct = 0, $page = 1)
+        $typeProducts = $this->typeProductClass->getAllTypeProduct();
+        return view('project.index', compact('products', 'typeProducts'));
+    }
+    public function getProductByPageByIdTypeProduct($idTypeProduct = 0)
     {
         //Nhận toàn bộ sản phẩm theo loại theo page
         $products = $this->productClass->getAllProductByPageByIdTypeProduct(Product::$limit, $idTypeProduct);

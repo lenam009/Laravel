@@ -28,7 +28,7 @@
             @endforeach
         </div>
         <div class="row justify-content-end">
-            {{ $products->onEachSide(1)->links('pagination::bootstrap-4') }}
+            {{ $products->links('pagination::bootstrap-4') }}
         </div>
     @endif
 @endsection
