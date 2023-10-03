@@ -7,7 +7,7 @@
 @section('content')
 
     @if (!isset($products) || count($products) == 0)
-        <div class="row m-auto p-5">
+        <div class="w-25 m-auto p-5">
             <x-Project.Alert content="Don't have product !!!" color="danger" />
         </div>
     @else
