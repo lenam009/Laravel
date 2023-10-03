@@ -12,7 +12,7 @@
 
                 </a></li>
             <li class="nav-item">
-                <div class="dropdown">
+                <div class="dropdown" style="visibility: hidden;">
                     <a class="dropdown-toggle text-dark nav-link" data-toggle="dropdown" href="#"
                         style="visibility: visible" id="menu-dropdown">Laptop</a>
                     <div class="dropdown-menu border-0" style="position: absolute;z-index: 1;">
