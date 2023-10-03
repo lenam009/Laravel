@@ -10,13 +10,13 @@
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-    @include('project.layouts.css')
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/main.css') }}">
 </head>
 
 <body>
 
     @include('project.header')
-    <div class="container-fluid" style="background-color: grey">
+    <div class="container-fluid" style="background-color: grey;z-index: -1">
         <div class="container-fluid m-auto">
             <main class="">
                 <aside class="text-center">

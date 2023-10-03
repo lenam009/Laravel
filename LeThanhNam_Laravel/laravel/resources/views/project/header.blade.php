@@ -14,8 +14,8 @@
             <li class="nav-item">
                 <div class="dropdown">
                     <a class="dropdown-toggle text-dark nav-link" data-toggle="dropdown" href="#"
-                        id="menu-dropdown">Laptop</a>
-                    <div class="dropdown-menu border-0">
+                        style="visibility: visible" id="menu-dropdown">Laptop</a>
+                    <div class="dropdown-menu border-0" style="position: absolute;z-index: 1;">
                         @foreach ($typeProducts as $typeProduct)
                             <a href="{{ route('project.getProductByIdTypeProduct', ['idTypeProduct' => $typeProduct->idTypeProduct]) }}"
                                 class="dropdown-item hoverTypeProduct border p-2">{{ $typeProduct->nameTypeProduct }}</a>
